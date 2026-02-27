@@ -12,7 +12,7 @@ export function Members() {
 
   const members: Member[] = [
     { name: "Uliboooo", github: "https://github.com/Uliboooo", x: "https://x.com/Uliboooo", site: "https://about.uliboooo.dev/" },
-    { name: "八取來亜", github: "https://github.com/liar235", x: "https://x.com/Raia_Hattori", site: "https://zenn.dev/raia_hattori" }
+    { name: "八取來亜", github: "https://github.com/liar2357", x: "https://x.com/Raia_Hattori", site: "https://zenn.dev/raia_hattori" }
   ];
 
   return (
