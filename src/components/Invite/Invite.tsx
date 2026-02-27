@@ -14,7 +14,8 @@ export function Invite() {
         <SmartLink href='https://discord.gg/Cx6FG4CtBF'>招待URL</SmartLink>
       </div>
       <div>
-        <img src={isDarkMode ? '../public/images/qr_dark.webp' : '../public/images/qr.webp'}
+        <img
+          src={isDarkMode ? `${import.meta.env.BASE_URL}images/qr_dark.webp` : `${import.meta.env.BASE_URL}images/qr.webp`}
           alt="discord invite qrcode"
         />
       </div>
