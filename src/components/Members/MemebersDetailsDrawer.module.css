@@ -1,0 +1,49 @@
+/* 背景を暗くする */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 右からスライドするパネル */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  /* 初期状態は画面の外 */
+  width: 100%;
+  max-width: 400px;
+  height: 100vh;
+  background: #fff;
+  z-index: 1001;
+  transition: transform 0.3s ease-in-out;
+  padding: 40px 20px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.drawer.open {
+  transform: translateX(-400px);
+  /* 画面内に滑り込ませる */
+}
+
+/* 名前のホバー演出 */
+.name_trigger {
+  cursor: pointer;
+  font-weight: bold;
+  transition: color 0.2s;
+}
+
+.name_trigger:hover {
+  color: #0070f3;
+  /* リンクっぽく色を変える */
+  text-decoration: underline;
+}

@@ -1,0 +1,17 @@
+.achivement_list {
+  padding-left: 20px;
+}
+
+.achivement_el {
+  /* display: flex; */
+  /* gap: 10px; */
+
+  .sub {
+    padding-left: 10px;
+  }
+
+  .desc {
+    /* padding-left: 10px; */
+    font-size: 90%;
+  }
+}

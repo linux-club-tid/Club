@@ -1,0 +1,25 @@
+.cont {}
+
+.mainContent {
+  /* width: 95%; */
+  margin-left: 10px;
+
+  h2 {
+    position: relative;
+    display: block;
+  }
+
+  h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 50%;
+    height: 1px;
+    background: white;
+  }
+
+  img {
+    max-width: 300px;
+  }
+}
