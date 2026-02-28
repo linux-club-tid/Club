@@ -1,71 +1,73 @@
-## Linux-club-tid とは？
+# React + TypeScript + Vite
 
-TID-Linux-clubの管理およびホームページです。
-開発の紹介、スケジュール、TODOなどを掲載しています。
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 目標 (Goals)
+Currently, two official plugins are available:
 
-### LinuxをデスクトップOSとして普及させる
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-* Linuxユーザーではない学生への情報発信
-* Linuxインストールのハードルを下げる
-* Linuxの利用に関するサポート
+## React Compiler
 
-### TIDにおけるLinuxコミュニティになる
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-* 問題解決における相互扶助
-* Linuxソフトウェアの共有
-* 新規プロジェクトのメンバー募集の場となる
+## Expanding the ESLint configuration
 
-### Linuxに関するアウトプットを行う
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
 
-* クラブで得た知見を外部へ公開する
-* 学生のアウトプット（情報発信）の練習の場とする
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
 
-## リポジトリ (Repositories)
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
 
-* **Linux初心者向けドキュメント**: [https://github.com/linux-club-tid/linux-docs](https://github.com/linux-club-tid/linux-docs)
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
 
-## メンバー (Members)
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-* [liar2357](https://github.com/orgs/linux-club-tid/people/liar2357)
-* [Uliboooo](https://github.com/orgs/linux-club-tid/people/Uliboooo)
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
 
-## スケジュール (Schedule)
-
-* [GitHub Projects - TID-Linux-club](https://github.com/orgs/linux-club-tid/projects/1)
-
----
-
-## What is ?
-
-Management and Home page about TID-Linux-club.
-
-e.g. schedule, TODO, introduce of Developments.
-
-## Goals
-
-- Popularize linux as Desktop OS
-    - Communicate about Linux to students that isn't Linux user
-    - Lowering the Barriers of Linux installation
-    - Supports about Linux usage
-- Be a Linux community of TID
-    - Mutual assistance in problem solving
-    - Sharing Linux softwares
-    - Be a place of recruiting new projects
-- Output about Linux
-    - to publich information about this club's knowledges
-    - Practice to output for students
-
-## Repositories
-
-- Docs for Linux beginners -> https://github.com/linux-club-tid/linux-docs
-
-## Members
-
-- https://github.com/orgs/linux-club-tid/people/liar2357
-- https://github.com/orgs/linux-club-tid/people/Uliboooo
-
-## Schedule
-
-https://github.com/orgs/linux-club-tid/projects/1
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
