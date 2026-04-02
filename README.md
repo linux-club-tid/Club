@@ -3,7 +3,8 @@
 TID-Linux-clubの管理およびホームページです。
 開発の紹介、スケジュール、TODOなどを掲載しています。
 
-[https://linux-club-tid.github.io/Club/](https://linux-club-tid.github.io/Club/)
+[https://linux-club-tid.pages.dev/](https://linux-club-tid.pages.dev/)
+
 ## 目標 (Goals)
 
 ### LinuxをデスクトップOSとして普及させる
