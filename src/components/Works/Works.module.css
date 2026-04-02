@@ -1,17 +1,20 @@
 .achivement_list {
   padding-left: 20px;
+
+  .work_title {
+    font-weight: bold;
+  }
+
+  .work_status {}
+
 }
 
 .achivement_el {
-  /* display: flex; */
-  /* gap: 10px; */
-
   .sub {
     padding-left: 10px;
   }
 
   .desc {
-    /* padding-left: 10px; */
     font-size: 90%;
   }
 }

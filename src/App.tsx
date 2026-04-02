@@ -2,7 +2,7 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 import './App.css'
-import { Achivements } from './components/Achivements/Achivements'
+import { Works } from './components/Works/Works'
 import { Goals } from './components/Gloals/Goals'
 import { Invite } from './components/Invite/Invite'
 import { Layout } from './components/Layout'
@@ -16,8 +16,8 @@ function App() {
       <Layout>
         <Goals />
         <Invite />
+        <Works />
         <Members />
-        <Achivements />
       </Layout>
     </>
   )
