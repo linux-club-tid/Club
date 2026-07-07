@@ -1,5 +1,5 @@
 import { SmartLink } from "../link";
-import styles from "./Works.module.css"
+import styles from "./Works.module.css";
 
 type Status = "Plan" | "Doing" | "Done";
 type Works = {
@@ -15,15 +15,28 @@ export function Works() {
       title: "Linux documentation for begginners",
       status: "Doing",
       desc: "このサイトは「Linuxを始めたいけど何から始めればいいのか分からない！」というあなたをお手伝いするサイトです。",
-      url: ["https://github.com/linux-club-tid/linux-docs-next", "https://linux-docs-next.pages.dev/"]
+      url: [
+        "https://github.com/linux-club-tid/linux-docs-next",
+        "https://linux-docs-next.pages.dev/",
+      ],
     },
     {
-      title: "学園祭でのLinux体験会(仮)", status: "Plan", desc: "詳細未定"
-    }
+      title: "学園祭でのLinux体験会(仮)",
+      status: "Plan",
+      desc: "詳細未定",
+    },
+    {
+      title: "Penguin Kaigi(Linux勉強会)",
+      status: "Doing",
+      desc: "主に登壇形式の学内イベントです。",
+      url: ["https://conference-info-9m8.pages.dev/"],
+    },
   ];
   return (
     <>
-      <h2>Works <span className="jp">/ 実績</span></h2>
+      <h2>
+        Works <span className="jp">/ 実績</span>
+      </h2>
 
       <ul className={styles.achivement_list}>
         {works.map((a) => (
@@ -33,16 +46,15 @@ export function Works() {
               <p className={styles.work_status}>Status: {a.status}</p>
               <p>{a.url && <LinkGen urls={a.url} />}</p>
 
-
               <div className={styles.sub}>
                 <p className={styles.desc}>{a.desc}</p>
               </div>
             </div>
           </li>
         ))}
-      </ul >
+      </ul>
     </>
-  )
+  );
 }
 
 function LinkGen({ urls }: { urls: string[] }) {
@@ -54,7 +66,6 @@ function LinkGen({ urls }: { urls: string[] }) {
   return (
     <>
       {urls.map((url, index) => (
-        // mapの中では一意のkeyが必要です
         <SmartLink href={url} key={index}>
           {get_domain(url)}
         </SmartLink>
@@ -62,4 +73,3 @@ function LinkGen({ urls }: { urls: string[] }) {
     </>
   );
 }
-

@@ -4,9 +4,9 @@
 
 When deploying to Cloudflare Pages, use the following settings:
 
-- **Build command**: `npm run build:cloudflare`
+- **Build command**: `bun run build:cloudflare`
 - **Build output directory**: `dist`
-- **Node.js version**: 20 (auto-detected from `.node-version`)
+- **Node.js version**: 20 (for Vite/TypeScript toolchain compatibility)
 
 ## Environment Variables (Optional)
 
@@ -21,7 +21,7 @@ The `public/_redirects` file ensures all routes are handled by the SPA.
 
 For GitHub Pages deployment:
 ```bash
-npm run deploy
+bun run deploy
 ```
 
 This will automatically set the correct base path for GitHub Pages.

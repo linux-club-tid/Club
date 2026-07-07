@@ -1,17 +1,18 @@
 {
   "name": "linux_club_hp",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "packageManager": "bun@1.3.13",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
     "build:cloudflare": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy": "npm run build",
+    "predeploy": "bun run build",
     "deploy": "gh-pages -d dist",
-    "deploy:cloudflare": "npm run build:cloudflare"
+    "deploy:cloudflare": "bun run build:cloudflare"
   },
   "dependencies": {
     "react": "^19.2.0",

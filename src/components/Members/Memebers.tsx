@@ -9,16 +9,32 @@ type Member = {
   bio?: string;
 };
 export function Members() {
-
   const members: Member[] = [
-    { name: "Uliboooo", github: "https://github.com/Uliboooo", x: "https://x.com/Uliboooo", site: "https://about.uliboooo.dev/" },
-    { name: "八取來亜", github: "https://github.com/liar2357", x: "https://x.com/Raia_Hattori", site: "https://zenn.dev/raia_hattori" }
+    {
+      name: "Uliboooo",
+      github: "https://github.com/Uliboooo",
+      x: "https://x.com/Uliboooo",
+      site: "https://about.uliboooo.dev/",
+    },
+    {
+      name: "八取來亜",
+      github: "https://github.com/liar2357",
+      x: "https://x.com/Raia_Hattori",
+      site: "https://zenn.dev/raia_hattori",
+    },
+    { name: "RIOZE", site: "https://rioze.dev" },
+    { name: "Amano Nagare", github: "https://github.com/AmanoNagare" },
+    { name: "白井" },
+    { name: "pn" },
+    { name: "きょう" },
   ];
 
   return (
     <>
-      <h2>Members <span className="jp">/ メンバー</span></h2>
-      <ul style={{ listStyle: 'none', padding: 0 }}>
+      <h2>
+        Members <span className="jp">/ メンバー</span>
+      </h2>
+      <ul style={{ listStyle: "none", padding: 0 }}>
         {members.map((m) => (
           <li key={m.name}>
             <div className={styles.mem_content}>
@@ -31,13 +47,10 @@ export function Members() {
         ))}
       </ul>
     </>
-  )
+  );
 }
 
-function easyLinkGen<K extends keyof Member>(
-  key: K,
-  value?: Member[K]
-) {
+function easyLinkGen<K extends keyof Member>(key: K, value?: Member[K]) {
   if (typeof value === "string" && value.trim()) {
     return <SmartLink href={value}>{key}</SmartLink>;
   }
